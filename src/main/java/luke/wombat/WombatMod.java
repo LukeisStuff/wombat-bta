@@ -24,9 +24,9 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 		new WombatBlocks().initializeBlocks();
 		new WombatItems().initilizeItems();
 
-		Biomes.OVERWORLD_DESERT.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 10));
-		Biomes.OVERWORLD_OUTBACK.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 10));
-		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 10));
+		Biomes.OVERWORLD_DESERT.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
+		Biomes.OVERWORLD_OUTBACK.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
+		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
 
 		LOGGER.info("Wild Wombats initialized.");
     }
