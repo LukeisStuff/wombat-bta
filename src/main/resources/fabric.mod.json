@@ -29,9 +29,6 @@
 		],
 		"beforeClientStart": [
 			"luke.wombat.WombatMod"
-		],
-		"recipesReady": [
-			"luke.wombat.WombatMod"
 		]
 	},
   "mixins": [
