@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "wombat",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Wild Wombats",
+  "description": "Brings some features from the combat april fools update to real BTA updates.",
   "authors": [
-    "Turnip Labs"
+    "LukeisStuff"
   ],
   "contact": {
     "homepage": "",
@@ -19,20 +19,20 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.wombat.WombatMod"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.wombat.WombatMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.wombat.WombatMod"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.wombat.WombatMod"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+    "wombat.mixins.json"
   ],
 
   "depends": {
