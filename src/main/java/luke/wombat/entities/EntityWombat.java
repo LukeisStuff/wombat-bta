@@ -2,10 +2,16 @@ package luke.wombat.entities;
 
 import com.mojang.nbt.CompoundTag;
 import luke.wombat.items.WombatItems;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.Biomes;
+import net.minecraft.core.world.season.Seasons;
+import net.minecraft.core.world.weather.Weather;
 
 public class EntityWombat extends EntityMonster {
 	public EntityWombat(World world) {
@@ -53,10 +59,6 @@ public class EntityWombat extends EntityMonster {
 		return 1.0F;
 	}
 
-	public boolean getCanSpawnHere() {
-		return true;
-	}
-
 	protected void init() {
 		super.init();
 		this.entityData.define(17, (byte)0);
@@ -101,4 +103,9 @@ public class EntityWombat extends EntityMonster {
 	public void onDeath(Entity entity) {
 		super.onDeath(entity);
 	}
+@Override
+public boolean getCanSpawnHere() {
+	return true;
+}
+
 }
