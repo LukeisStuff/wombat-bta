@@ -2,8 +2,6 @@ package luke.wombat;
 
 import com.mojang.nbt.CompoundTag;
 import net.minecraft.core.entity.Entity;
-import net.minecraft.core.entity.EntityLightningBolt;
-import net.minecraft.core.entity.animal.EntityPig;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.world.World;
@@ -13,7 +11,6 @@ public class EntityWombat extends EntityMonster {
 		super(world);
 		this.skinName = "wombat";
 		this.setSize(0.9F, 0.9F);
-		this.fireImmune = true;
 	}
 
 	protected Entity findPlayerToAttack() {
@@ -43,16 +40,8 @@ public class EntityWombat extends EntityMonster {
 		this.entityData.define(17, (byte)0);
 	}
 
-	public void addAdditionalSaveData(CompoundTag tag) {
-		super.addAdditionalSaveData(tag);
-		if (this.entityData.getByte(17) == 1) {
-			tag.putBoolean("powered", true);
-		}
-
-	}
-
 	public String getEntityTexture() {
-		return "/mob/wombat/0.png";
+		return "/assets/wombat/mob/wombat/0.png";
 	}
 
 	public void readAdditionalSaveData(CompoundTag tag) {
