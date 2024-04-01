@@ -27,6 +27,9 @@
 		"afterGameStart": [
 			"luke.wombat.WombatMod"
 		],
+		"beforeClientStart": [
+			"luke.wombat.WombatMod"
+		],
 		"recipesReady": [
 			"luke.wombat.WombatMod"
 		]
