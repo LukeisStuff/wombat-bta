@@ -2,16 +2,11 @@ package luke.wombat.entities;
 
 import com.mojang.nbt.CompoundTag;
 import luke.wombat.items.WombatItems;
-import net.minecraft.core.block.Block;
+import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.biome.Biome;
-import net.minecraft.core.world.biome.Biomes;
-import net.minecraft.core.world.season.Seasons;
-import net.minecraft.core.world.weather.Weather;
 
 public class EntityWombat extends EntityMonster {
 	public EntityWombat(World world) {
@@ -60,13 +55,17 @@ public class EntityWombat extends EntityMonster {
 	}
 
 	protected void init() {
-		super.init();
 		this.entityData.define(17, (byte)0);
 	}
 
 	public String getEntityTexture() {
-		return "/assets/wombat/mob/wombat/0.png";
+		return "/assets/wombat/mob/" + this.skinName + "/" + this.getSkinVariant() + ".png";
 	}
+@Override
+	public int getSkinVariant() {
+		int skinVariantCount = 3;
+		return this.entityData.getByte(1) % skinVariantCount;
+}
 
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
