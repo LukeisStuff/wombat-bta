@@ -2,7 +2,6 @@ package luke.wombat;
 
 import luke.wombat.block.WombatBlocks;
 import luke.wombat.items.WombatItems;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -21,6 +20,10 @@ public class WombatRecipes {
 			.addInput('S', Item.stick)
 			.addInput('H', WombatItems.hide)
 			.create("didgeridoo", new ItemStack(WombatItems.didgeridoo, 1));
+
+		RecipeBuilder.Shaped(MOD_ID, "H", "H")
+			.addInput('H', WombatItems.hide)
+			.create("hide_to_leather", new ItemStack(Item.leather, 1));
 
 	}
 

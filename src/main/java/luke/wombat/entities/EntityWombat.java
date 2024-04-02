@@ -77,11 +77,11 @@ public class EntityWombat extends EntityMonster {
 	}
 
 	protected String getHurtSound() {
-		return "mob.wolf.growl";
+		return "mob.wolf.bark";
 	}
 
 	protected String getDeathSound() {
-		return "mob.pig.death";
+		return "mob.pigdeath";
 	}
 
 	public void playLivingSound() {
