@@ -47,7 +47,7 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 
 		MobInfoRegistry.register(EntityWombat.class, "wombat.name", "wombat.desc",
 			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.hide),
-				0.66f * 0.2f, 0, 4)});
+				1.0f, 0, 4)});
 	}
 
 	@Override

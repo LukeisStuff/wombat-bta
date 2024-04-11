@@ -2,7 +2,6 @@ package luke.wombat.entities;
 
 import com.mojang.nbt.CompoundTag;
 import luke.wombat.items.WombatItems;
-import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.player.EntityPlayer;
