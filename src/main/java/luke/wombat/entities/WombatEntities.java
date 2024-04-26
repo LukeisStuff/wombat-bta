@@ -4,7 +4,7 @@ import luke.wombat.WombatRenderer;
 import turniplabs.halplibe.helper.EntityHelper;
 
 public class WombatEntities {
-	private static int entityID = 200;
+	private static int entityID = 250;
 
 	public void initializeEntities() {
 		EntityHelper.Core.createEntity(EntityWombat.class, entityID++, "Wombat");
