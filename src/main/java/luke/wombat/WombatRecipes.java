@@ -16,7 +16,7 @@ public class WombatRecipes implements RecipeEntrypoint {
 	public void initializeRecipes() {
 
 		RecipeBuilderShaped templateItemtoBlock = new RecipeBuilderShaped(MOD_ID, "XX", "XX");
-		templateItemtoBlock.addInput('X', WombatItems.hide).create("felt", new ItemStack(WombatBlocks.felt, 4));
+		templateItemtoBlock.addInput('X', WombatItems.hide).create("felt", new ItemStack(WombatBlocks.felt, 2));
 
 		RecipeBuilder.Shaped(MOD_ID, "  S", " H ", "S  ")
 			.addInput('S', Item.stick)

@@ -1,6 +1,5 @@
-package luke.wombat;
+package luke.wombat.entities;
 
-import luke.wombat.entities.EntityWombat;
 import net.minecraft.client.render.entity.LivingRenderer;
 import net.minecraft.client.render.model.ModelBase;
 

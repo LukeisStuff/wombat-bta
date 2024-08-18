@@ -19,7 +19,7 @@ import turniplabs.halplibe.util.GameStartEntrypoint;
 public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientStartEntrypoint {
     public static final String MOD_ID = "wombat";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    @Override
+
     public void onInitialize() {
 		new WombatBlocks().initializeBlocks();
 		new WombatItems().initilizeItems();
@@ -39,15 +39,15 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 	@Override
 	public void afterGameStart() {
 		new WombatRecipes().initializeRecipes();
-	}
-
-	@Override
-	public void beforeClientStart() {
-		new WombatEntities().initializeModels();
+		new WombatBlocks().initializeBlockDetails();
 
 		MobInfoRegistry.register(EntityWombat.class, "wombat.name", "wombat.desc",
 			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.hide),
 				1.0f, 0, 4)});
+	}
+
+	@Override
+	public void beforeClientStart() {
 	}
 
 	@Override

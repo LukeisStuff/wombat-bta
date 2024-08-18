@@ -14,13 +14,13 @@ import static luke.wombat.WombatMod.MOD_ID;
 
 public class WombatBlocks {
 
-	private int blockID(String blockName) {
+	public int blockID(String blockName) {
 		return WombatConfig.cfg.getInt("Block IDs." + blockName);
 	}
 
 	public static Block felt;
 
-	private void initializeBlockDetails() {
+	public void initializeBlockDetails() {
 		CreativeHelper.setParent(felt, Block.oreCoalGranite);
 	}
 
@@ -31,11 +31,9 @@ public class WombatBlocks {
 			.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 0.8f))
 			.setHardness(0.6f)
 			.setResistance(0.6f)
-			.setTextures("felt.png")
+			.setTextures("wombat:block/felt")
 			.setFlammability(30, 60)
 			.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS)
 			.build(new Block("felt", blockID("felt"), Material.cloth));
-
-		initializeBlockDetails();
 	}
 }
