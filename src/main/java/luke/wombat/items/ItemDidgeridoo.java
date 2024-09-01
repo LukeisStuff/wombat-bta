@@ -10,7 +10,7 @@ public class ItemDidgeridoo extends Item {
 		super(name, id);
 	}
 
-	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer) {
+	public ItemStack onUseItem(ItemStack itemstack, World world, EntityPlayer entityplayer) {
 		world.playSoundAtEntity(entityplayer, entityplayer, "ambient.cave.cave", 1.0F, 0.5f);
 		return itemstack;
 	}
