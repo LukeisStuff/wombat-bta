@@ -21,7 +21,6 @@ public class WombatBlocks {
 	public static Block felt;
 
 	public void initializeBlockDetails() {
-		CreativeHelper.setParent(felt, Block.oreCoalGranite);
 	}
 
 	public void initializeBlocks() {
