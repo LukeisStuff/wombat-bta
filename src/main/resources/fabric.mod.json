@@ -30,6 +30,9 @@
 		"recipesReady": [
 			"luke.wombat.WombatRecipes"
 		],
+		"initModels": [
+			"luke.wombat.WombatModels"
+		],
 		"beforeClientStart": [
 			"luke.wombat.WombatMod"
 		]
@@ -39,7 +42,6 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.15.5"
   },
   "suggests": {
   }

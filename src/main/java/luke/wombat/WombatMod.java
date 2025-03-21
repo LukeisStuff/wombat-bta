@@ -1,13 +1,13 @@
 package luke.wombat;
 
 import luke.wombat.block.WombatBlocks;
-import luke.wombat.entities.EntityWombat;
+import luke.wombat.entities.MobWombat;
 import luke.wombat.entities.WombatEntities;
 import luke.wombat.items.WombatItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
 import net.minecraft.core.entity.SpawnListEntry;
-import net.minecraft.core.enums.EnumCreatureType;
+import net.minecraft.core.enums.MobCategory;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
@@ -24,9 +24,9 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 		new WombatBlocks().initializeBlocks();
 		new WombatItems().initilizeItems();
 
-		Biomes.OVERWORLD_DESERT.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
-		Biomes.OVERWORLD_OUTBACK.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
-		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityWombat.class, 5));
+		Biomes.OVERWORLD_DESERT.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
+		Biomes.OVERWORLD_OUTBACK.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
+		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
 
 		LOGGER.info("Wild Wombats initialized.");
     }
@@ -41,8 +41,8 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 		new WombatRecipes().initializeRecipes();
 		new WombatBlocks().initializeBlockDetails();
 
-		MobInfoRegistry.register(EntityWombat.class, "wombat.name", "wombat.desc",
-			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.hide),
+		MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
+			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.HIDE),
 				1.0f, 0, 4)});
 	}
 

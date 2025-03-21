@@ -1,11 +1,11 @@
 package luke.wombat.entities;
 
+import net.minecraft.core.util.collection.NamespaceID;
 import turniplabs.halplibe.helper.EntityHelper;
 
 public class WombatEntities {
-	private static int entityID = 230;
 
 	public void initializeEntities() {
-		EntityHelper.createEntity(EntityWombat.class, entityID++, "Wombat", () -> new WombatRenderer(new ModelWombat(), new ModelWombat(0.5f), 0.7f));
+		EntityHelper.createEntity(MobWombat.class, NamespaceID.getPermanent("wildwombats", "wombat"), "guidebook.section.mob.wombat.name");
 	}
 }

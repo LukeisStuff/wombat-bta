@@ -1,31 +1,24 @@
 package luke.wombat.items;
 
-import luke.wombat.WombatConfig;
-import luke.wombat.WombatMod;
 import net.minecraft.core.item.Item;
 import turniplabs.halplibe.helper.ItemBuilder;
-import turniplabs.halplibe.helper.ItemHelper;
 
 import static luke.wombat.WombatMod.MOD_ID;
 
 public class WombatItems {
 
-	private int itemID(String itemName) {
-		return WombatConfig.cfg.getInt("Item IDs." + itemName);
-	}
+	int itemID = 17550;
 
-	public static Item hide;
-	public static Item didgeridoo;
+	public static Item HIDE;
+	public static Item DIDGERIDOO;
 	public void initilizeItems() {
 
 		// Items
-		hide = new ItemBuilder(MOD_ID)
-			.setIcon("wombat:item/hide")
-			.build(new Item("hide", itemID("hide")));
+		HIDE = new ItemBuilder(MOD_ID)
+			.build(new Item("hide", "wildwombats:item/hide", itemID++));
 
-		didgeridoo = new ItemBuilder(MOD_ID)
-			.setIcon("wombat:item/didgeridoo")
-			.build(new ItemDidgeridoo("didgeridoo", itemID("didgeridoo")));
+		DIDGERIDOO = new ItemBuilder(MOD_ID)
+			.build(new ItemDidgeridoo("didgeridoo", "wildwombats:item/didgeridoo", itemID++));
 
 	}
 }

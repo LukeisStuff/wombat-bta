@@ -32,15 +32,15 @@ public class ModelWombat extends ModelQuadruped {
 	}
 
 	public void setRotationAngles(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
-		this.head.rotateAngleX = headPitch / 57.29578F;
-		this.head.rotateAngleY = headYaw / 57.29578F;
-		this.body.rotateAngleX = 1.570796F;
-		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
-		this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
-		this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
-		this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
-		this.nose.rotateAngleX = headPitch / 57.29578F;
-		this.nose.rotateAngleY = headYaw / 57.29578F;
+		this.head.xRot = headPitch / 57.29578F;
+		this.head.yRot = headYaw / 57.29578F;
+		this.body.xRot = 1.570796F;
+		this.leg1.xRot = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
+		this.leg2.xRot = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
+		this.leg3.xRot = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
+		this.leg4.xRot = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
+		this.nose.xRot = headPitch / 57.29578F;
+		this.nose.yRot = headYaw / 57.29578F;
 	}
 
 }
