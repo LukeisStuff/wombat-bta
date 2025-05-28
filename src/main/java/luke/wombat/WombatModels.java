@@ -12,11 +12,8 @@ import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
-import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
-
-import static luke.wombat.WombatMod.MOD_ID;
 
 public class WombatModels implements ModelEntrypoint {
 	@Override
