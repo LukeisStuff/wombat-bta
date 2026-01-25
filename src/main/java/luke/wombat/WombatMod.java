@@ -21,9 +21,6 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public void onInitialize() {
-		new WombatBlocks().initializeBlocks();
-		new WombatItems().initilizeItems();
-
 		Biomes.OVERWORLD_DESERT.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
 		Biomes.OVERWORLD_OUTBACK.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
 		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
@@ -33,12 +30,13 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 
 	@Override
 	public void beforeGameStart() {
+		new WombatBlocks().initializeBlocks();
+		new WombatItems().initilizeItems();
 		new WombatEntities().initializeEntities();
 	}
 
 	@Override
 	public void afterGameStart() {
-		new WombatRecipes().initializeRecipes();
 		new WombatBlocks().initializeBlockDetails();
 
 		MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
