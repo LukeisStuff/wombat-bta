@@ -37,10 +37,6 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
     @Override
     public void afterGameStart() {
         new WombatBlocks().initializeBlockDetails();
-
-        MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
-            10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.HIDE),
-                1.0f, 0, 4)});
     }
 
     @Override
@@ -49,7 +45,9 @@ public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientSta
 
     @Override
     public void afterClientStart() {
-
+        MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
+            10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.HIDE),
+                1.0f, 0, 4)});
     }
 
 }

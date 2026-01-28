@@ -28,8 +28,8 @@ public class WombatModels implements ModelEntrypoint {
 
     @Override
     public void initItemModels(ItemModelDispatcher dispatcher) {
-        dispatcher.addDispatch(WombatItems.HIDE, new ItemModelStandard(WombatItems.HIDE, null));
-        dispatcher.addDispatch(WombatItems.DIDGERIDOO, new ItemModelStandard(WombatItems.DIDGERIDOO, null));
+        dispatcher.addDispatch(WombatItems.HIDE, new ItemModelStandard(WombatItems.HIDE, null).setIcon("wombat:item/hide"));
+        dispatcher.addDispatch(WombatItems.DIDGERIDOO, new ItemModelStandard(WombatItems.DIDGERIDOO, null).setIcon("wombat:item/didgeridoo"));
     }
 
     @Override

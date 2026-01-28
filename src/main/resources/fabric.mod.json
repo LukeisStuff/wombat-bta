@@ -35,7 +35,10 @@
 		],
 		"beforeClientStart": [
 			"luke.wombat.WombatMod"
-		]
+		],
+    "afterClientStart": [
+      "luke.wombat.WombatMod"
+    ]
 	},
   "mixins": [
     "wombat.mixins.json"
