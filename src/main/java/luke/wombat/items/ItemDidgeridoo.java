@@ -1,26 +1,36 @@
 package luke.wombat.items;
 
-import net.minecraft.core.block.entity.TileEntityActivator;
+import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.sound.SoundCategory;
-import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.world.World;
 
-import java.util.Random;
+import java.util.Objects;
 
 public class ItemDidgeridoo extends Item {
-	public ItemDidgeridoo(String name, String namespaceId, int id) {
-		super(name, namespaceId, id);
-	}
 
-	public ItemStack onUseItem(ItemStack itemstack, World world, Player entityplayer) {
-		world.playSoundAtEntity(entityplayer, entityplayer, "ambient.cave.cave", 1.0F, 0.5f);
-		return itemstack;
-	}
+    public ItemDidgeridoo(String translationKey, String namespaceId, int id) {
+        super(translationKey, namespaceId, id);
+        this.maxStackSize = 1;
+        this.setMaxDamage(256);
+    }
 
-	public void onUseByActivator(ItemStack itemStack, TileEntityActivator activatorBlock, World world, Random random, int blockX, int blockY, int blockZ, double offX, double offY, double offZ, Direction direction) {
-		world.playSoundEffect(null, SoundCategory.CAVE_SOUNDS, blockX, blockY, blockZ, "ambient.cave.cave", 1.0F, 0.5f);
-	}
+    @Override
+    public void inventoryTick(ItemStack itemstack, World world, Entity entity, int i, boolean flag) {
+        if (itemstack.getMetadata() > 0) {
+            itemstack.damageItem(-1, entity);
+        }
+    }
+
+    @Override
+    public ItemStack onUseItem(ItemStack itemstack, World world, Player player) {
+        if (Objects.requireNonNull(player.getHeldItem()).getMetadata() <= 0) {
+            world.playSoundAtEntity(player, player, "ambient.cave.cave", 1.0F, 0.5f);
+            player.swingItem();
+            player.getHeldItem().damageItem(256, player);
+        }
+        return itemstack;
+    }
+
 }

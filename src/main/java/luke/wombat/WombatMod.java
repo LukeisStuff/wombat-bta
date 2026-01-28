@@ -15,42 +15,41 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
-
 public class WombatMod implements ModInitializer, GameStartEntrypoint, ClientStartEntrypoint {
     public static final String MOD_ID = "wombat";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     public void onInitialize() {
-		Biomes.OVERWORLD_DESERT.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
-		Biomes.OVERWORLD_OUTBACK.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
-		Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
+        Biomes.OVERWORLD_DESERT.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
+        Biomes.OVERWORLD_OUTBACK.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
+        Biomes.OVERWORLD_OUTBACK_GRASSY.getSpawnableList(MobCategory.monster).add(new SpawnListEntry(MobWombat.class, 5));
 
-		LOGGER.info("Wild Wombats initialized.");
+        LOGGER.info("Wild Wombats initialized.");
     }
 
-	@Override
-	public void beforeGameStart() {
-		new WombatBlocks().initializeBlocks();
-		new WombatItems().initilizeItems();
-		new WombatEntities().initializeEntities();
-	}
+    @Override
+    public void beforeGameStart() {
+        WombatBlocks.init();
+        WombatItems.init();
+        WombatEntities.init();
+    }
 
-	@Override
-	public void afterGameStart() {
-		new WombatBlocks().initializeBlockDetails();
+    @Override
+    public void afterGameStart() {
+        new WombatBlocks().initializeBlockDetails();
 
-		MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
-			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.HIDE),
-				1.0f, 0, 4)});
-	}
+        MobInfoRegistry.register(MobWombat.class, "wombat.name", "wombat.desc",
+            10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(WombatItems.HIDE),
+                1.0f, 0, 4)});
+    }
 
-	@Override
-	public void beforeClientStart() {
-	}
+    @Override
+    public void beforeClientStart() {
+    }
 
-	@Override
-	public void afterClientStart() {
+    @Override
+    public void afterClientStart() {
 
-	}
+    }
 
 }

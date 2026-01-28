@@ -7,18 +7,30 @@ import static luke.wombat.WombatMod.MOD_ID;
 
 public class WombatItems {
 
-	int itemID = 17550;
+    static int itemID = 17550;
 
-	public static Item HIDE;
-	public static Item DIDGERIDOO;
-	public void initilizeItems() {
+    public static Item HIDE;
+    public static Item DIDGERIDOO;
 
-		// Items
-		HIDE = new ItemBuilder(MOD_ID)
-			.build(new Item("hide", "wildwombats:item/hide", itemID++));
+    private static boolean hasInit = false;
 
-		DIDGERIDOO = new ItemBuilder(MOD_ID)
-			.build(new ItemDidgeridoo("didgeridoo", "wildwombats:item/didgeridoo", itemID++));
+    public static void init() {
+        if (!hasInit) {
+            hasInit = true;
+            initializeItems();
+        }
+    }
 
-	}
+    public static String itemKey(String string) {
+        return MOD_ID + ":item/" + string;
+    }
+
+    public static void initializeItems() {
+        HIDE = new ItemBuilder(MOD_ID)
+            .build(new Item("hide", itemKey("hide"), itemID++));
+
+        DIDGERIDOO = new ItemBuilder(MOD_ID)
+            .build(new ItemDidgeridoo("didgeridoo", itemKey("didgeridoo"), itemID++));
+
+    }
 }

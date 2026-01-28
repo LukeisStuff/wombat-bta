@@ -63,19 +63,6 @@ lwjgl {
 dependencies {
     minecraft("::${libs.versions.bta.get()}")
 
-    implementation(libs.btwaila)
-    implementation(libs.commandly)
-
-    implementation(libs.deep)
-
-    implementation(libs.moon)
-
-    implementation(libs.aether)
-    implementation(libs.dragonfly)
-    implementation(libs.catalyst.core)
-    implementation(libs.catalyst.effects)
-    implementation(libs.uselessNumerical.get().let { "${it.group}:${it.name}:${it.version}-${libs.versions.bta.get()}" })
-
     runtimeOnly(libs.clientJar)
     implementation(libs.loader)
     implementation(libs.halplibe)
